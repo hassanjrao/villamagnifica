@@ -3,7 +3,6 @@
 /.dh-diag
 /video/
 /2/video/
-/temecula_wine_country/contact-test.php
 node_modules/
 *.log
 .env

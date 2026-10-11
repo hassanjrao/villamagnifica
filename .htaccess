@@ -1,0 +1,6 @@
+Options -Indexes
+<FilesMatch "^\.git$">
+    Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/(?:tests|docs|\.audit-artifacts|\.private)(?:/|$)
+RedirectMatch 404 ^/temecula_wine_country/contact-test\.php$
