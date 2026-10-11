@@ -27,7 +27,7 @@ const {base,root,prepare,audit,save}=require('./browser.cjs');
     console.log(route,JSON.stringify({status:response.status(),errors,violations:result.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),headings,overflow}));
     page.off('pageerror',onError);page.off('requestfailed',onFailure);
   }
-  console.log(save((all?'all-':'')+(enlarged?'axe-text-enlarged-report':reflow?'axe-reflow-report':mobile?'axe-mobile-report':'axe-report'),{viewport,textSize:enlarged?'200%':'100%',results}));
+  console.log(save(process.env.ACCESSIBILITY_REPORT_NAME||(all?'all-':'')+(enlarged?'axe-text-enlarged-report':reflow?'axe-reflow-report':mobile?'axe-mobile-report':'axe-report'),{viewport,textSize:enlarged?'200%':'100%',results}));
   await browser.close();
   if(results.some(r=>r.status!==200||r.violations.length||r.errors.length||r.headings!==1||r.overflow))process.exitCode=1;
 })().catch(error=>{console.error(error);process.exitCode=1;});
