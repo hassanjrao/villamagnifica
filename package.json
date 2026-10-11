@@ -1,0 +1,9 @@
+{
+  "name": "villamagnifica-accessibility",
+  "private": true,
+  "scripts": {
+    "test:a11y": "node tests/accessibility.cjs",
+    "test:keyboard": "node tests/keyboard.cjs"
+  },
+  "devDependencies": { "axe-core": "4.14.0", "playwright": "1.48.2" }
+}

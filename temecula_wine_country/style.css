@@ -1,0 +1,1186 @@
+body {
+	font-family: 'PT Sans', sans-serif;
+}
+.bg-light {
+	background-color: #fff !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+}
+a {
+	color: #1da3dd
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active {
+	color: #1da3dd;
+}
+.text-primary {
+	color: #1da3dd !important;
+}
+
+.bg-primary
+{
+	background-color:#1da3dd !important;
+}
+
+.navbar-light .navbar-nav li:last-child
+{
+	display: none;
+}
+
+
+/* Slider start */
+
+.site_header_carousel_fixed .carousel-item {
+	height: calc(100vh - 83px);
+}
+#site_video_background {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url(polina.jpg) no-repeat;
+	background-size: cover;
+}
+.site_slider_overlay {
+	background-color: rgba(0, 0, 0, 0.2);
+	height: 100%;
+}
+.carousel-item {
+	height: 100vh;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+.site_mobile_layer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 23%;
+}
+.carousel-caption {
+	top: 22%;
+	position: absolute;
+	right: 15%;
+	bottom: 20px;
+	left: 15%;
+	z-index: 10;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #000;
+	text-align: center;
+}
+.site_caption_content {
+	padding: 0 10%;
+}
+.site_caption_content {
+	position: relative;
+	top: 50%;
+}
+.site_slide_title {
+	font-weight: normal;
+	font-size: 39px;
+	line-height: 50px;
+}
+.site_slide_subtitle {
+	font-weight: normal;
+	text-shadow: none;
+}
+.site_slide_subtitle span {
+	background-color: rgba(29, 163, 221, 0.6);
+	padding: 10px 20px;
+}
+.site_ciwaohelps h1 {
+	color: #1da3dd;
+}
+.site_ciwaohelps p {
+	font-size: 28px;
+}
+ @-webkit-keyframes pulse {
+ 0% {
+ opacity: 0;
+ background-position: center top;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+ 10% {
+ opacity: 0;
+}
+ 50% {
+ opacity: 1;
+ -moz-background-size: 75% auto;
+ -o-background-size: 75% auto;
+ -webkit-background-size: 75% auto;
+ background-size: 75% auto;
+}
+ 90% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+ background-position: center bottom;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+}
+@-moz-keyframes pulse {
+ 0% {
+ opacity: 0;
+ background-position: center top;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+ 10% {
+ opacity: 0;
+}
+ 50% {
+ opacity: 1;
+ -moz-background-size: 75% auto;
+ -o-background-size: 75% auto;
+ -webkit-background-size: 75% auto;
+ background-size: 75% auto;
+}
+ 90% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+ background-position: center bottom;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+}
+@-ms-keyframes pulse {
+ 0% {
+ opacity: 0;
+ background-position: center top;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+ 10% {
+ opacity: 0;
+}
+ 50% {
+ opacity: 1;
+ -moz-background-size: 75% auto;
+ -o-background-size: 75% auto;
+ -webkit-background-size: 75% auto;
+ background-size: 75% auto;
+}
+ 90% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+ background-position: center bottom;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+}
+@keyframes pulse {
+ 0% {
+ opacity: 0;
+ background-position: center top;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+ 10% {
+ opacity: 0;
+}
+ 50% {
+ opacity: 1;
+ -moz-background-size: 75% auto;
+ -o-background-size: 75% auto;
+ -webkit-background-size: 75% auto;
+ background-size: 75% auto;
+}
+ 90% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+ background-position: center bottom;
+ -moz-background-size: 0 auto;
+ -o-background-size: 0 auto;
+ -webkit-background-size: 0 auto;
+ background-size: 0 auto;
+}
+}
+.scroll-down {
+	margin: 0;
+	border: 2px solid #fff;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	position: absolute;
+	left: 50%;
+	bottom: 0%;
+	width: 50px;
+	height: 50px;
+	margin-left: -50px;
+	margin-top: -50px;
+}
+.scroll-down a {
+	display: block;
+	opacity: 0;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	line-height: 0;
+	font-size: 0;
+	color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 100%;
+	-moz-background-size: 0 auto;
+	-o-background-size: 0 auto;
+	-webkit-background-size: 0 auto;
+	background-size: 0 auto;
+	-webkit-animation: pulse 1.5s 0s infinite normal ease forwards;
+	-moz-animation: pulse 1.5s 0s infinite normal ease forwards;
+	-o-animation: pulse 1.5s 0s infinite normal ease forwards;
+	animation: pulse 1.5s 0s infinite normal ease forwards;
+	background-image: url("https://jamesmuspratt.com/codepen/img/arrow-down.svg");
+	background-repeat: no-repeat;
+}
+.scroll-down a:before, .scroll-down a:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url("https://jamesmuspratt.com/codepen/img/arrow-down.svg") no-repeat center top;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	-webkit-background-size: 100% auto;
+	background-size: 100% auto;
+}
+.scroll-down a:before {
+	-webkit-animation: pulse 1.5s 0.25s infinite normal ease forwards;
+	-moz-animation: pulse 1.5s 0.25s infinite normal ease forwards;
+	-o-animation: pulse 1.5s 0.25s infinite normal ease forwards;
+	animation: pulse 1.5s 0.25s infinite normal ease forwards;
+}
+.scroll-down a:after {
+	-webkit-animation: pulse 1.5s 0.5s infinite normal ease forwards;
+	-moz-animation: pulse 1.5s 0.5s infinite normal ease forwards;
+	-o-animation: pulse 1.5s 0.5s infinite normal ease forwards;
+	animation: pulse 1.5s 0.5s infinite normal ease forwards;
+}
+.scroll-down a:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+/* Slider end */
+
+
+/* Navbar start */
+
+#mainNav {
+/*    position: sticky;
+	position: -webkit-sticky;
+    top: 0;
+    z-index: 200;
+*/}
+.navbar-light .navbar-nav .nav-link {
+	color: #000;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+	color: #1da3dd;
+}
+.navbar-nav .nav-link {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+	text-transform: capitalize;
+	font-size:20px;
+}
+/* Navbar end */
+
+
+/* Villa info start */
+
+.site_section_wrapper_auto {
+	padding: 2% 0;
+}
+.site_villa_info_wrapper {
+	color: #fff;
+	padding: 2% 0;
+	background-color: #1da3dd;
+}
+.site_villa_info li:not(:last-child) {
+	margin-right: 20px;
+}
+.site_villa_info li {
+	font-size: 24px;
+}
+/* Villa info end */
+
+
+/* Kitchen gallery start */
+
+
+
+
+.site_kitchen_box {
+	position: relative;
+}
+.site_kitchen_box:hover:before {
+	content: "";
+	text-align: center;
+	vertical-align: middle;
+	background-color: rgba(0, 0, 0, 0.3);
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.site_kitchen_box:hover:after {
+	content: "Click to enlarge";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	display: block;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+img.zoom {
+	width: 100%;
+	height: 220px;
+	border-radius: 5px;
+	object-fit: cover;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+}
+/* Kitchen gallery end */
+
+
+/* Instruction start */
+
+
+
+
+.site_ins_card {
+	position: relative;
+}
+.site_ins_card img {
+	width: 100%;
+	height: 308px;
+	border-radius: 5px;
+	object-fit: cover;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+}
+.site_ins_card .card-header {
+	color: #fff;
+	background-color: #1da3dd;
+	padding:0px;
+}
+
+.site_ins_card .card-header a
+{
+	padding: .75rem 1.25rem;
+    display: block;
+	color:#fff;
+	text-decoration:none;
+}
+
+/* Instruction end */
+
+.site_wineries_list li i {
+	color: #1da3dd;
+	margin-right: 5px;
+}
+/* Service box start */
+
+.site_service_box {
+	position: relative;
+	overflow: hidden;
+}
+.site_service_title_wrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	transition: .5s ease;
+}
+.site_service_box img {
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.site_service_box a:hover img {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+/*.site_service_box:hover .site_service_title_wrapper {
+  opacity: 1;
+}
+*/
+.site_service_title {
+	width: 100%;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.site_service_title h1 {
+	font-size: 30px;
+	text-shadow: 2px 2px #333;
+}
+/* Service box end */
+
+
+/* Wineries media list start */
+
+.site_wineries_listing .col-lg-6
+{
+	margin-bottom:30px;
+}
+
+.site_wineries_media_list
+{
+	height:100%;
+}
+
+.site_wineries_media_list .media {
+	border:solid 1px #f1f1f1;
+	
+	padding:15px;
+	height:100%;
+
+}
+.site_wineries_media_list .media ul
+{
+	margin-bottom:0px;
+}
+
+.site_wineries_media_list li {
+	font-size: 14px;
+}
+.site_wineries_thumb {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	margin-left: 10px;
+}
+/* Wineries media list end */
+
+
+/* Content start */
+
+.site_subheader_inner
+{
+	position:relative;
+}
+
+.site_arrow_link
+{
+	position:absolute;
+    opacity: .5;
+	color:#fff;
+	top: 50%;
+    transform: translateY(-50%);
+}
+
+.site_subheader .site_arrow_left
+{
+	left:0;
+}
+
+.site_subheader .site_arrow_right
+{
+	right:0;
+}
+
+.site_arrow_link:hover
+{
+	color:#fff;
+    opacity: .9;
+}
+
+
+.site_title_icon_box
+{
+    display: inline-block;
+    padding: 11px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+.site_map_list li
+{
+	margin-bottom:20px;
+}
+
+.site_howit_wrapper {
+	background-color: #1da3dd;
+	padding: 2% 0;
+	color: #fff;
+}
+.site_subheader {
+	background-color: #1da3dd;
+	padding: 2% 0;
+	color: #fff;
+	text-align: center;
+}
+.site_title_letter_space {
+	letter-spacing: 5px;
+}
+.site_subheader h2 {
+	font-size: 30px;
+}
+.site_youtube_icon i {
+	font-size: 100px;
+	color: #ff0000;
+}
+.site_youtube_icon a:hover i {
+	color: #FFF;
+}
+.site_display_table {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.site_display_table_cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.site_title_bar {
+	background-color: #1da3dd;
+	padding: 2% 0;
+	color: #fff;
+	text-align: center;
+}
+.site_title_bar h2 {
+	font-size: 30px;
+}
+.site_content_box {
+	padding: 5%;
+	width: 100%;
+}
+.site_section_title {
+	font-size: 33px;
+	color: #1da3dd;
+}
+.site_content_list li {
+	margin-bottom: 30px;
+	font-size: 23px;
+	position: relative;
+}
+.site_content_list_icon li:before {
+	content: '';
+	background-image: url(images/check.png);
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: -35px;
+	top: 0px;
+	background-size: 100%;
+}
+.site_blackbackground .site_content_list, .site_section_bg7 .site_content_list {
+	color: #FFF;
+}
+.lead {
+	font-size: 1.24rem;
+}
+.site_section_bg {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+.site_section_bg1 {
+	background-image: url(images/section1.jpg);
+}
+.site_section_bg2 {
+	background-image: url(images/section2.jpg);
+}
+.site_section_bg3 {
+	background-image: url(images/section3.jpg);
+}
+.site_section_bg4 {
+	background-image: url(images/section4.jpg);
+}
+.site_section_bg5 {
+	background-image: url(images/section5.jpg);
+}
+.site_section_bg6 {
+	background-image: url(images/section6.jpg);
+}
+.site_section_bg6-1 {
+	background-image: url(images/people-celebrating.jpg);
+}
+.site_section_bg6-2 {
+	background-image: url(images/ciwao-protects.jpg);
+}
+.site_section_bg7 {
+	background-image: url(images/section7.jpg);
+	height: 480px;
+}
+.site_weneries_bg {
+	background-image: url(images/wineries.jpg);
+}
+ @media (min-width: 1920px) {
+.site_section_bg7 {
+	height: 600px !important;
+}
+}
+.site_section_bg8 {
+	background-image: url(images/alex.jpg);
+}
+.site_factbg1 {
+	background-image: url(images/fact-bg1.jpg);
+}
+.site_factbg2 {
+	background-image: url(images/fact-bg2.jpg);
+}
+.site_blue_bg {
+	background-color: #1E77D0;
+}
+.site_blue_bg .site_content_box, .site_blue_bg .site_section_title {
+	color: #fff;
+}
+.site_blue_bg hr {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.site_blackbackground {
+	background-color: #17181a;
+}
+.site_position_title {
+	color: #fff;
+	font-size: 70px;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.site_home_box {
+	background-color: #1f59a8;
+	color: #FFF;
+}
+.site_hi_box {
+	background-color: #f0812c;
+}
+.site_hb_title {
+	padding: 5%;
+	text-align: center;
+	text-transform: uppercase;
+}
+.site_home_box_subtitle {
+	position: relative;
+}
+.site_home_box_subtitle:before, .site_home_box_subtitle:after {
+	background: #fff;
+	content: "";
+	display: block;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	width: 10%;
+}
+.site_home_box_subtitle:before {
+	right: 67%;
+}
+.site_home_box_subtitle:after {
+	left: 67%;
+}
+.site_hb_subheader {
+	color: #1f59a8;
+	background-color: #FFF;
+	border-top: solid 5px #799bcb;
+	border-bottom: solid 5px #799bcb;
+	text-align: center;
+	padding: 20px 10px;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.site_hi_subheader {
+	color: #f0812c;
+	background-color: #FFF;
+	border-top: solid 5px #f7af79;
+	border-bottom: solid 5px #f7af79;
+	text-align: center;
+	padding: 20px 10px;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.site_hb_bg {
+	background-image: url(images/homebuying.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.site_hi_bg {
+	background-image: url(images/homeimprovements.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.site_rightbox_bg {
+	background-color: #f0f0f0;
+	min-height: 268px;
+}
+.site_rightbox_title {
+	color: #1f59a8;
+}
+.site_home_box_footer {
+	background-color: #1f59a9;
+	text-align: center;
+	padding: 3% 1%;
+	border-top: solid 5px #799bcb;
+}
+.site_hi_footer {
+	background-color: #f0812c;
+	border-top: solid 5px #f7af79;
+}
+.site_hb_footer_title {
+	font-size: 22px;
+	font-weight: bold;
+}
+.site_hb_footer_title span {
+	font-weight: normal;
+}
+.site_hb_list {
+	font-size: 14px;
+}
+.site_primary_background {
+	color: #fff;
+}
+.site_overlay {
+	background: rgba(0,0,0,0.6);
+}
+.site_overlay .site_services_top {
+	color: #FFF;
+}
+.site_section_wrapper {
+	width: 100%;
+	display: table;
+	margin: 0;
+	max-width: none;
+	height: 100vh;
+}
+.site_unset_height {
+	display: block;
+	height: auto;
+}
+.site_dark_background {
+	background-color: #f1f1f1;
+	color: #fff;
+}
+.site_footer_nav li a {
+	color: #000;
+}
+.site_footer_nav li:hover a {
+	color: #1da3dd;
+}
+.btn, .submitBtn {
+	cursor: pointer;
+}
+button.close {
+	color: #FFF !important;
+	cursor: pointer;
+}
+ button:hvoer .close:hover {
+ color:#b8cdef !important;
+}
+.site_copyright {
+	color: #1da3dd;
+}
+.btn-secondary {
+	background-color: #6a8eca;
+	border-color: #6a8eca;
+}
+.modal-header {
+	background-color: #6a8eca;
+}
+.modal-content .modal-title {
+	color: #FFF;
+}
+.input-group-addon {
+	background-color: #FFF;
+}
+.btn-primary {
+	background-color: #1da3dd;
+}
+.btn-primary:hover {
+	background-color: #37ade0;
+}
+.site_page_content h5 {
+	font-weight: normal;
+}
+.site_page_content h5, .site_page_content a {
+	color: #1da3dd;
+}
+.site_price_banner img {
+	height: 500px;
+}
+.site_temecula_links li a.site_temecula_link {
+	color: #000;
+	text-decoration: none;
+}
+.site_temecula_links li p {
+	font-size: 16px;
+	color: #333;
+}
+/*.site_temecula_links li:hover a.site_temecula_link
+{
+	color:#1da3dd;
+}
+*/
+
+.site_grocery_content {
+	background-color: #f7f7f7;
+}
+.site_grocery_icon i {
+	font-size: 40px;
+	color: #1da3dd;
+}
+.site_book_thumb_row a {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+.site_book_thumb_row a img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+/* Team box start */
+
+.site_team_box .card-body {
+ padding:.5rem 0;
+}
+.site_team_box .card {
+	border: none;
+}
+.site_team_box h5 {
+	font-weight: 100;
+}
+.site_team_box a {
+	text-decoration: none;
+	color: #000;
+}
+.site_team_box a:hover {
+	color: #1da3dd;
+}
+
+
+
+/* Team box end */
+
+/* Responsive start */
+
+@media (max-width: 1279px) {
+body {
+}
+}
+ @media (max-width: 992px) {
+body {
+	font-size: 14px;
+}
+.carousel-caption {
+	top: 35%;
+}
+.site_ciwaohelps h1 {
+	font-size: 35px;
+}
+.site_ciwaohelps p {
+	font-size: 24px;
+}
+.site_section_bg, .site_home_box {
+	margin-bottom: 20px;
+}
+.site_hi_bg, .site_hb_bg {
+	height: 50vh;
+}
+.site_slide_title {
+}
+.site_mobile_layer {
+	display: none;
+}
+.site_slide_subtitle {
+	font-size: 20px;
+}
+.site_howit_wrapper h2 {
+	font-size: 22px;
+}
+.site_section_title {
+	font-size: 28px;
+}
+.site_content_list li {
+	font-size: 14px;
+}
+.site_section_bg8 {
+	background-position: center top;
+	margin-bottom: 0px;
+}
+.site_section_bg7 {
+	margin-bottom: 0px;
+}
+#section11.pb-5 {
+	padding-bottom: 0px !important;
+}
+#section10.pt-5 {
+	padding-top: 0px !important;
+}
+.site_position_title {
+	font-size: 48px !important;
+	text-align: center;
+}
+.site_section_mobile_right [class^="col-"]:first-child {
+	order: 1;
+}
+.site_section_mobile_left [class^="col-"]:first-child {
+	order: 2;
+}
+.site_about_inner {
+/*	background-color: rgba(0, 0, 0, 0.6);
+*/}
+.site_price_banner img {
+	height: auto;
+}
+#page {
+	margin-top: 0px;
+}
+.site_detective_img {
+	height: 230px;
+	margin: 20px 0;
+}
+.site_howit_wrapper h3 {
+	font-size: 26px;
+}
+.site_howit_wrapper h4 {
+	font-size: 14px;
+}
+.lead {
+	font-size: 14px !important;
+}
+.site_info_text {
+	font-size: 18px;
+}
+.site_mt_mobile {
+	margin-top: 0px;
+}
+.site_youtube_icon i {
+	font-size: 70px;
+}
+.site_teambox_row .col {
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.site_title_btn_list
+{
+	text-align:center;
+}
+
+.site_title_btn_list li
+{
+	margin-bottom:20px;
+}
+
+
+.site_title_btn_list li.ml-4
+{
+	margin-left:0px !important;
+}
+
+
+}
+
+@media (max-width: 768px) 
+{
+
+.site_subheader {
+    padding: 4% 0;
+}
+
+.site_subheader .site_arrow_link i
+{
+	font-size:2em;
+}
+
+.site_title_btn_list li:first-child
+{
+	width:100% !important;
+}
+
+.site_title_icon_box
+{
+	display:block;
+	margin-bottom:0px;
+}
+
+}
+
+@media (max-width: 640px) {
+.carousel-caption {
+	left: 5%;
+	right: 5%;
+}
+.site_slide_title {
+	font-size: 24px;
+}
+.site_ciwaohelps h1 {
+	font-size: 28px;
+}
+.site_ciwaohelps p {
+	font-size: 18px;
+}
+.site_subheader {
+	font-size: 20px;
+}
+.site_page_content h4 {
+	font-size: 18px;
+	text-align: left;
+}
+.site_page_content h5 {
+	font-size: 16px;
+}
+.site_title_bar h2, .site_subheader h2 {
+	font-size: 24px;
+}
+.site_section_title {
+	font-size: 15px;
+}
+hr {
+	margin-top: 0.5rem;
+	bottom-top: 0.5rem;
+}
+}
+ @media (max-width: 575px) {
+.site_slide_title {
+	font-size: 22px;
+}
+.site_slide_subtitle {
+	font-size: 18px;
+}
+.site_howit_wrapper h2 {
+	font-size: 20px;
+}
+.site_section_title {
+	font-size: 22px;
+}
+.site_content_list li {
+	font-size: 14px;
+}
+
+.site_wineries_media_list .media
+{
+	display:block;
+}
+
+.site_wineries_thumb {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-left: 00px;
+}
+
+}
+ @media (max-width: 480px) {
+.site_slide_title {
+	font-size: 18px;
+}
+.site_slide_subtitle {
+	font-size: 14px;
+}
+.navbar-brand img, .site_footer_logo img {
+	height: 50px;
+}
+.site_hb_title h1 {
+	font-size: 30px;
+}
+.site_home_box_subtitle {
+	font-size: 22px;
+}
+}
+ @media (max-width: 376px) {
+.site_slide_title {
+	font-size: 14px;
+}
+.site_ciwaohelps h1 {
+	font-size: 24px;
+}
+.site_ciwaohelps p {
+	font-size: 14px;
+}
+}
+ @media (max-width: 320px) {
+.site_youtube_icon i {
+	font-size: 60px;
+}
+.site_section_title {
+	font-size: 18px;
+}
+.site_hb_title h1 {
+	font-size: 24px;
+}
+.site_home_box_subtitle {
+	font-size: 14px;
+}
+.site_hb_footer_title {
+	font-size: 16px;
+}
+.site_page_content h4 {
+	font-size: 15px;
+	text-align: left;
+}
+.site_page_content h5 {
+	font-size: 14px;
+}
+}
