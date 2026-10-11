@@ -1,6 +1,6 @@
 # Villa Magnifica accessibility work
 
-Technical accessibility improvements target WCAG 2.2 A/AA. Automated results do not establish full WCAG conformance or ADA compliance. Caption and description review for the existing videos and manual assistive-technology testing remain outstanding.
+Technical accessibility improvements target [WCAG 2.2 A/AA](https://www.w3.org/WAI/standards-guidelines/wcag/). Automated results do not establish full WCAG conformance or ADA compliance. Caption and description review for the existing videos and manual assistive-technology testing remain outstanding.
 
 ## Source preservation and Git deployment
 
@@ -53,7 +53,22 @@ Initial live scans of the homepage, rooms and booking redirect recorded contrast
 
 Local canonical scans passed on 29 requested URLs. Local scans across 88 requested URLs at 320 pixels passed with no axe violations or horizontal overflow. Local keyboard checks passed 14 behaviors plus six open-state audits, covering menus, errors, viewer focus, form responses, reduced motion and narrow reflow. Seven local PHP fixture groups passed, including delivery success/failure/exception handling and HTML escaping; no test email was sent.
 
-Production deployment and final live audit results will be recorded below after verification.
+Production deployment was completed with Git push/pull on October 11, 2026. Application revision `fc7416e6f9bb63f389c21d136c81cfd83c0cf2db` includes the final backyard arrow refinement. Initial comprehensive live scans ran against `f147a98`; the changed backyard controls received a targeted follow-up scan on all three copies at all three viewport sizes.
+
+| Live verification | Coverage | Result |
+| --- | --- | --- |
+| Desktop, 1280 × 720 | 88 requested URLs across all public copies | HTTP 200; zero axe violations, JavaScript errors, failed requests or horizontal overflow |
+| Mobile, 375 × 812 | 29 requested URLs in the main live directory | HTTP 200; zero axe violations, JavaScript errors, failed requests or horizontal overflow |
+| Reflow, 320 × 800 | 29 requested URLs in the main live directory | HTTP 200; zero axe violations, JavaScript errors, failed requests or horizontal overflow |
+| Keyboard and interactive states | 14 behavior checks and six open-state axe audits | Passed; zero open-state violations |
+| Server-side validation | Empty submissions to all six form endpoints | HTTP 422 with named field errors; no email delivery attempted |
+| Public path protection | Git pointer, test harness, documentation and old SMTP path | HTTP 403/404 |
+
+Every scanned page had one main heading. Requested URL counts include existing redirects; they do not imply that every URL contains distinct content. The live booking tests exercise `/2/book-now.html`, where the booking form remains enabled. Form delivery success/failure is simulated in browser tests and covered by local PHP fixtures; actual production delivery was not exercised.
+
+The final live reports contain no failed asset requests. Earlier local reports retain failed requests from the legacy chat embed before its removal. Axe still marks video captions and some image-overlay contrast checks as incomplete; these are retained for manual review and are not counted as automated passes. The image labels use white text on a black overlay with 85% opacity, which provides greater than 15:1 contrast even over a white image. This contrast calculation does not replace an overall manual accessibility review.
+
+Raw live evidence: `.audit-artifacts/live-all-axe-report.json`, `live-axe-mobile-report.json`, `live-axe-reflow-report.json`, `live-keyboard-report.json`, `live-deployment-report.json`, and `live-backyard-*-report.json`.
 
 Tests use axe-core 4.14.0 and Playwright 1.48.2 with installed Chrome. Rules include WCAG 2 A/AA, 2.1 A/AA, 2.2 AA and best practices. Raw ignored reports live in `.audit-artifacts/`; reports retain incomplete rules for manual review. Node 18 or newer is required by the pinned Playwright package. This machine ran the tests successfully on Node 16 despite an engine warning.
 
@@ -72,7 +87,7 @@ Set `ACCESSIBILITY_BASE_URL=https://www.villamagnifica.com` to audit live pages.
 
 ## Remaining manual work
 
-All 34 unique existing videos contain audio streams. Captions, transcripts and any needed descriptions of visual instructions have not been authored or verified. Audio-stream presence alone does not determine whether captions are required; each video's speech, meaningful sound and visual content must be reviewed. Automated scans flag video-caption checks as incomplete.
+All 34 unique existing videos contain audio streams. Captions, transcripts and any needed descriptions of visual instructions have not been authored or verified. Audio-stream presence alone does not determine whether captions are required; each video's speech, meaningful sound and visual content must be reviewed. Automated scans flag video-caption checks as incomplete. See the [video review inventory](media-review.md) for individual links and durations.
 
 Review image descriptions against intended meaning, floor-plan details and any navigational information in maps. Test with NVDA or VoiceOver, browser zoom/text enlargement, high contrast, mobile assistive technology and native media controls during playback. External Airbnb, Vrbo, Instacart, maps and retailer destinations are outside this site's code and need their own reviews.
 
