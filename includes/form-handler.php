@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-function handleVillaForm(bool $booking, bool $smtp = false, string $contactRecipient = 'alexlluch3@gmail.com'): never
+function handleVillaForm(bool $booking, bool $smtp = false, string $contactRecipient = 'alexlluch3@gmail.com', bool $phoneRequired = true): never
 {
     $labels = $booking
         ? ['fname'=>'First name','lname'=>'Last name','email'=>'Email address','about'=>'About you','occasion'=>'Occasion or event','fdate'=>'Arrival date','ldate'=>'Departure date','people'=>'Number of guests','hearabout'=>'How you heard about the villa','message'=>'Message']
@@ -10,7 +10,7 @@ function handleVillaForm(bool $booking, bool $smtp = false, string $contactRecip
     foreach (array_merge(array_keys($labels), ['reason']) as $name) {
         $raw = $_POST[$name] ?? '';
         $fields[$name] = is_string($raw) ? trim($raw) : '';
-        if (isset($labels[$name]) && $fields[$name] === '') $errors[$name] = $labels[$name] . ' is required.';
+        if (isset($labels[$name]) && ($name !== 'phone_number' || $phoneRequired) && $fields[$name] === '') $errors[$name] = $labels[$name] . ' is required.';
         elseif (strlen($fields[$name]) > 10000) $errors[$name] = ($labels[$name] ?? 'This field') . ' is too long.';
     }
     if ($fields['email'] !== '' && !filter_var($fields['email'], FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Enter a valid email address.';

@@ -10,6 +10,9 @@ const post=(path,data)=>new Promise((resolve,reject)=>{const body=new URLSearchP
  const valid={fname:'<script>alert(1)</script>',lname:'Audit',email:'audit@example.invalid',phone_number:'+44 (0)20 1234 5678',message:'Example & characters',reason:'Google'};
  r=await post('/temecula_wine_country/contact.php',valid);assert.equal(r.status,process.env.EXPECT_DELIVERY_FAILURE?503:200);console.log('PASS contact delivery fixture and HTML escaping');
  for(const fname of ['Fixture failure','Fixture exception']){r=await post('/temecula_wine_country/contact.php',{...valid,fname});assert.equal(r.status,503);assert(!JSON.stringify(r.body).includes('Fixture'));}console.log('PASS delivery failure and exception handling');
- for(const prefix of ['/','/2/']){r=await post(prefix+'contact.php',valid);assert.equal(r.status,process.env.EXPECT_DELIVERY_FAILURE?503:200);}console.log('PASS legacy contact endpoints');
+ for(const prefix of ['/','/2/']){
+  r=await post(prefix+'contact.php',{});assert.equal(r.status,422);assert.equal(Object.keys(r.body.errors).length,4);assert(!r.body.errors.phone_number);
+  const {phone_number,...legacyFields}=valid;r=await post(prefix+'contact.php',legacyFields);assert.equal(r.status,process.env.EXPECT_DELIVERY_FAILURE?503:200);
+ }console.log('PASS legacy contact endpoints accept their original four fields');
  r=await post('/temecula_wine_country/book.php',{fname:'Test',lname:'Audit',email:'audit@example.invalid',about:'Example',occasion:'Example',fdate:'2027-01-10',ldate:'2027-01-12',people:'12',hearabout:'Google',message:'Example'});assert.equal(r.status,process.env.EXPECT_DELIVERY_FAILURE?503:200);console.log('PASS booking delivery fixture');
 })().catch(e=>{console.error(e);process.exitCode=1;});
