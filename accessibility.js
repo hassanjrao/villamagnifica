@@ -19,9 +19,9 @@
     const open = button.getAttribute('aria-expanded') !== 'true'; closeDropdowns(button);
     button.setAttribute('aria-expanded', String(open)); document.getElementById(button.getAttribute('aria-controls'))?.classList.toggle('show', open);
   }));
-  document.addEventListener('click', event => { if (!event.target.closest('.dropdown')) closeDropdowns(); });
+  document.addEventListener('click', event => { if (!event.target.closest('.dropdown, dialog.photo-viewer')) closeDropdowns(); });
   document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape') return;
+    if (event.key !== 'Escape' || event.target.closest('dialog.photo-viewer')) return;
     const openDropdown = dropdowns.find(button => button.getAttribute('aria-expanded') === 'true');
     if (openDropdown) { closeDropdowns(); openDropdown.focus(); return; }
     if (menuButton?.getAttribute('aria-expanded') === 'true') { setMenu(false); menuButton.focus(); }
