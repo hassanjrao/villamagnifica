@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-function handleVillaForm(bool $booking, bool $smtp = false, string $contactRecipient = 'alexlluch3@gmail.com', bool $phoneRequired = true): never
+function handleVillaForm(bool $booking, bool $smtp = false, string $contactRecipient = 'alexlluch3@gmail.com', bool $phoneRequired = true, string $contactReturnPath = 'index.html#section10'): never
 {
     $labels = $booking
         ? ['fname'=>'First name','lname'=>'Last name','email'=>'Email address','about'=>'About you','occasion'=>'Occasion or event','fdate'=>'Arrival date','ldate'=>'Departure date','people'=>'Number of guests','hearabout'=>'How you heard about the villa','message'=>'Message']
@@ -23,14 +23,14 @@ function handleVillaForm(bool $booking, bool $smtp = false, string $contactRecip
         if ($fields['people'] !== '' && (!ctype_digit($fields['people']) || (int)$fields['people'] < 1 || (int)$fields['people'] > 24)) $errors['people'] = 'Enter a number of guests between 1 and 24.';
     }
     $json = str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json');
-    $sendResponse = static function(int $code, array $result) use ($json, $booking): never {
+    $sendResponse = static function(int $code, array $result) use ($json, $booking, $contactReturnPath): never {
         http_response_code($code); header('Cache-Control: no-store');
         if ($json) { header('Content-Type: application/json; charset=utf-8'); echo json_encode($result); exit; }
         header('Content-Type: text/html; charset=utf-8');
         $escape = static fn(string $text): string => htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
         echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Villa Magnifica — form result</title></head><body><main><h1>Villa Magnifica — form result</h1><p>'.$escape($result['message']).'</p>';
         if (isset($result['errors'])) { echo '<ul>'; foreach ($result['errors'] as $error) echo '<li>'.$escape($error).'</li>'; echo '</ul>'; }
-        echo '<p>Use your browser’s Back button to return to your entries, or <a href="'.($booking?'book-now.html':'index.html#section10').'">return to the form</a>.</p></main></body></html>'; exit;
+        echo '<p>Use your browser’s Back button to return to your entries, or <a href="'.$escape($booking?'book-now.html':$contactReturnPath).'">return to the form</a>.</p></main></body></html>'; exit;
     };
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') $sendResponse(405, ['message'=>'Please submit the contact or booking form.']);
     if ($errors) $sendResponse(422, ['message'=>'Please correct the highlighted fields.', 'errors'=>$errors]);
