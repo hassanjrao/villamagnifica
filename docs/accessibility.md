@@ -44,6 +44,7 @@ Keep the private transport and media backups when moving the site to another ser
 - Replaced legacy lightboxes with a named native dialog, keyboard navigation, focus containment and focus restoration. Videos have controls, names and no automatic playback.
 - Corrected low-contrast blue text/backgrounds, photo title overlays, footer text and instruction cards. Enlarged small links in error summaries and winery lists. Added narrow-layout and reduced-motion styles.
 - Labeled contact and legacy booking fields, enabled appropriate autocomplete and phone/date input types, and added visible field errors and focusable announced summaries. Failed delivery preserves entries; successful delivery announces confirmation. Server validation covers required fields, email, dates and guest counts; email body values are escaped.
+- Restored the original four visible contact fields on the older root `index1.html` and `/2/index.html` homepages on October 13. Their server endpoints accept submissions without a phone number; the main homepage retains its original phone field. A comparison against the downloaded server baseline confirms that all 87 HTML files now retain their original visible form-field counts.
 - Preserved current booking redirects and tested the older `/2/book-now.html` form where booking remains enabled. Corrected older root Home/booking links that pointed to a missing `index.html`.
 - Replaced the old chat embeds with a visible contact-form link and removed unavailable third-party decorative arrow references. External booking destinations remain unchanged.
 
@@ -70,6 +71,28 @@ The final live reports contain no failed asset requests. Earlier local reports r
 
 Raw live evidence: `.audit-artifacts/live-all-axe-report.json`, `live-axe-mobile-report.json`, `live-axe-reflow-report.json`, `live-keyboard-report.json`, `live-deployment-report.json`, and `live-backyard-*-report.json`.
 
+The October 13 form reversal was deployed through Git push/pull at application revision `d2d8ba231f9b04ba3ce1788cae209404c8c8d330`. PHP syntax checks and all seven local delivery-fixture groups passed, including successful legacy submissions containing only their original four fields. Six live empty-submission validators and four public-path protections passed; no production message was sent. Both restored forms passed a local mobile axe scan.
+
+The older root contact endpoint's HTML response now returns to the existing `index1.html#section10` form, rather than a missing `index.html`. That change was deployed at `7e4c3a1da7fe07b651697613b0385bc9f9824138`; local and live empty submissions confirmed the correct HTML return links for all three contact endpoints. This adds no form controls.
+
+## Every-page score review, October 13, 2026
+
+All 91 public requested URLs scored **100/100 in Lighthouse accessibility on desktop and mobile**, exceeding the requested minimum of 90. The list contains all 87 HTML files plus `/`, `/index.php`, `/2/` and `/temecula_wine_country/`; existing redirects are included as requested URLs and their final destinations are recorded. Submission endpoints and library internals are not public content pages.
+
+| Live review | Requested URLs | States | Result |
+| --- | --- | --- | --- |
+| Lighthouse 13.5.0, desktop 1280 × 900 | 91 | 91 | Minimum 100/100; all final document responses HTTP 200; no failed accessibility audits |
+| Lighthouse 13.5.0, mobile 375 × 812 | 91 | 91 | Minimum 100/100; all final document responses HTTP 200; no failed accessibility audits |
+| Latest mobile axe results, 375 × 812 | 91 | 91 | No violations, JavaScript errors, failed requests or horizontal overflow; one main heading per page |
+
+See [every-page scores](lighthouse-scores.csv) and the [complete URL inventory](lighthouse-routes.json). Scores come from actual Lighthouse runs, not an axe-derived estimate. The shared runner is `D:/laravel/villafab-laravel/tests/lighthouse-accessibility.cjs`, using Node 22 and Lighthouse installed in the ignored audit-tooling directory. It runs the complete accessibility category without excluded rules, stores each full Lighthouse report and records requested/final URLs, HTTP status, version, score, failures and warnings.
+
+Lighthouse produced 183 raw states: 182 distinct URL/profile pairs plus one mobile instructions-page repeat. That repeat used a 120-second load budget after an initial slow-load warning and passed at 100 with no warning. The final aggregate retains the earlier report's path as provenance. Remaining Lighthouse warnings are solely notices about existing redirects; each redirect destination was also scanned directly.
+
+The first mobile axe crawl encountered transient HTTP/2 protocol errors and connection resets on three older root pages, including failed stylesheet downloads on two of them. All three pages passed clean follow-up scans, alongside the restored forms and additional directory aliases. Original failed-download evidence remains unchanged, and the aggregate explicitly identifies the latest report used for each URL.
+
+Raw evidence is retained in `.audit-artifacts/oct13-lighthouse-summary.json`, the `oct13-lighthouse-*` directories, `oct13-verified-axe-mobile-summary.json`, `live-oct13-live-all-axe-mobile-report.json` and `live-oct13-mobile-resource-repeat.json`. These automated scores do not verify video captions, media descriptions or full screen-reader task completion; the manual work below still applies. No AccessibilityChecker account scan or subscription purchase was performed.
+
 Tests use axe-core 4.14.0 and Playwright 1.48.2 with installed Chrome. Rules include WCAG 2 A/AA, 2.1 A/AA, 2.2 AA and best practices. Raw ignored reports live in `.audit-artifacts/`; reports retain incomplete rules for manual review. Node 18 or newer is required by the pinned Playwright package. This machine ran the tests successfully on Node 16 despite an engine warning.
 
 ```sh
@@ -95,6 +118,6 @@ Review image descriptions against intended meaning, floor-plan details and any n
 
 1. Sign in through the [provided AccessibilityChecker link](https://www.accessibilitychecker.org/sign-up/?sign_action=checkout&redirect_to=https%3A%2F%2Fwww.accessibilitychecker.org%2Fmembership-account%2Fdomains%2F%23show-buy-subscription-popup) using your own account. No subscription was purchased and no AccessibilityChecker account scan was performed during this work.
 2. Add `https://www.villamagnifica.com/` as the domain and run a full crawl with WCAG 2.2 AA if available. Confirm the redirect to `/temecula_wine_country/` is followed.
-3. Include the older root pages and `/2/` paths, plus contact error states, the enabled legacy booking form, menu/dropdown states, grocery disclosure and open video dialogs. A homepage scan alone does not cover these states.
+3. Include all URLs in [the complete URL inventory](lighthouse-routes.json), including older root pages and `/2/` paths, plus contact error states, the enabled legacy booking form, menu/dropdown states, grocery disclosure and open video dialogs. A homepage scan alone does not cover these states.
 4. Export the report and separately track automated findings and manual checks. Review captions, descriptions and screen-reader tasks even if the scanner reports no failures.
 5. Apply any confirmed fixes, push to GitHub, pull on the server and repeat the scan. Keep the report and test date as evidence; a scanner score is not a legal compliance certification.
