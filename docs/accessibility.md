@@ -2,6 +2,18 @@
 
 Technical accessibility improvements target [WCAG 2.2 A/AA](https://www.w3.org/WAI/standards-guidelines/wcag/). Automated results do not establish full WCAG conformance or ADA compliance. Caption and description review for the existing videos and manual assistive-technology testing remain outstanding.
 
+## Closed media viewer correction — 13 October 2026
+
+The owner reported Previous photo, Next photo and Close viewer controls appearing beneath the footer before opening any media. The bundled Bootstrap reset sets `dialog` to `display: block`, overriding the native closed-dialog hiding behavior. An explicit `dialog.photo-viewer:not([open])` rule restores hiding. Dropdown click/Escape handlers also leave the active viewer alone, so closing it returns focus to its visible opener. All 87 HTML pages request versioned viewer assets to avoid stale cached CSS/JavaScript. Application revision `79b9a338154030d73d75e0ff03147c80bc13978e` was pushed and pulled into production.
+
+Live desktop and mobile checks reproduced the visible closed viewer before the correction and verified the fix in the root, `/2/` and `/temecula_wine_country/` folders. All six checks confirmed zero visible controls while closed, keyboard opening of the existing Aerial Video link, native media controls, hidden photo-navigation buttons for video, Escape and Close behavior, focus restoration and zero automated violations in the open viewer. No form fields or media assets were added. Before/after evidence is retained in the parent workspace's `storage/app/accessibility/pa11y-2026-10-13/viewer/` directory.
+
+## Pa11y CI review — 13 October 2026
+
+The locally installed Pa11y CI 5.0.0 with Pa11y 10.0.0 checks the complete 91-URL public inventory on desktop and mobile with both HTML_CodeSniffer and axe, using `WCAG2AA`. All warnings and notices are retained and no accessibility audit rule is disabled. Original reports and genuine load-error repeats are retained under `.audit-artifacts/pa11y-2026-10-13/`. The [separate public JSON report](https://villafabulosa.com/accessibility/reports/2026-10-13/villa-magnifica-pa11y.json) records each latest tested state and its source run. Its counts distinguish confirmed errors from axe findings marked `needsFurtherReview`; original severities and warning/notice findings remain visible. This does not establish full compliance or replace media and assistive-technology review.
+
+The latest 182 states returned HTTP 200 with no browser script errors and zero confirmed errors. They retain 872 warnings, 14,864 notices and 252 axe manual-review items. Four desktop loads timed out in the first post-fix run; isolated 120-second repeats passed, with the original failures retained and their latest replacements identified by source run. Remaining manual items include media captions and contrast/player assessment.
+
 ## Source preservation and Git deployment
 
 The production document root is `/home/dh_rdkjci/villamagnifica.com`. Its homepage redirects to `/temecula_wine_country/`. Root HTML pages and `/2/` also remain publicly reachable, so the changes cover all 87 HTML files and the root redirect.
